@@ -1,26 +1,21 @@
 from fastapi import FastAPI
-from routers import auth
-from routers import wallet
-from routers import transfer
-from routers import crypto
-from routers import savings
-from routers import insurance
-from routers import scoring
-from routers import admin
-from routers import compliance
+from routers import auth  # suppose que /routers/auth.py existe
+from fastapi.middleware.cors import CORSMiddleware
 
-app = FastAPI(title="Linc Full API", version="1.7+")
+app = FastAPI()
 
-app.include_router(auth.router)
-app.include_router(wallet.router)
-app.include_router(transfer.router)
-app.include_router(crypto.router)
-app.include_router(savings.router)
-app.include_router(insurance.router)
-app.include_router(scoring.router)
-app.include_router(admin.router)
-app.include_router(compliance.router)
+# CORS settings (important for frontend integration)
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # you can restrict this in prod
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+# Include auth routes
+app.include_router(auth.router, prefix="/auth")
 
 @app.get("/")
-def root():
-    return {"message": "Linc Full Backend API v1.7+"}
+def read_root():
+    return {"status": "Linc backend is running"}
