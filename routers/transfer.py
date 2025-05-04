@@ -14,5 +14,5 @@ def history():
     return {'endpoint': 'transfer/history', 'status': 'simulated'}
 
 @router.get('/inter-network')
-def inter-network():
-    return {'endpoint': 'transfer/inter-network', 'status': 'simulated'}
+def inter_network():
+    return {'endpoint': 'transfer/inter_network', 'status': 'simulated'}
