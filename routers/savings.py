@@ -14,5 +14,5 @@ def history():
     return {'endpoint': 'savings/history', 'status': 'simulated'}
 
 @router.get('/auto-debit')
-def auto-debit():
-    return {'endpoint': 'savings/auto-debit', 'status': 'simulated'}
+def auto_debit():
+    return {'endpoint': 'savings/auto_debit', 'status': 'simulated'}
