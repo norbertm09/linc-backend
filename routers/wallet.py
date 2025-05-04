@@ -14,5 +14,5 @@ def list():
     return {'endpoint': 'wallet/list', 'status': 'simulated'}
 
 @router.get('/add-funds')
-def add-funds():
+def add_funds():
     return {'endpoint': 'wallet/add-funds', 'status': 'simulated'}
