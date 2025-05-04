@@ -9,9 +9,9 @@ def register():
 def login():
     return {'endpoint': 'auth/login', 'status': 'simulated'}
 
-@router.get('/verify-otp')
-def verify-otp():
-    return {'endpoint': 'auth/verify-otp', 'status': 'simulated'}
+@router.get('/verify_otp')
+def verify_otp():
+    return {'endpoint': 'auth/verify_otp', 'status': 'simulated'}
 
 @router.get('/logout')
 def logout():
