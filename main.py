@@ -1,3 +1,5 @@
+import os
+from dotenv import load_dotenv
 from fastapi import FastAPI
 from routers import auth  # suppose que /routers/auth.py existe
 from fastapi.middleware.cors import CORSMiddleware
@@ -19,3 +21,6 @@ app.include_router(auth.router, prefix="/auth")
 @app.get("/")
 def read_root():
     return {"status": "Linc backend is running"}
+# Include Database
+load_dotenv()
+DATABASE_URL = os.getenv("DATABASE_URL")
